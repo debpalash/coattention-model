@@ -1,0 +1,24 @@
+[project]
+name = "coattention-captcha-solver"
+version = "0.1.0"
+description = "DINO-based CAPTCHA solver using co-attention feature matching"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "opencv-python>=4.8.0",
+    "numpy>=1.26.0",
+    "Pillow>=10.0.0",
+    "torchmetrics>=1.0.0",
+    "termcolor",
+]
+
+[project.scripts]
+solve-puzzle = "scripts.solve_puzzle:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
